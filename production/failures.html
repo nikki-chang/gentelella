@@ -1,0 +1,35 @@
+<!-- 在项目的 production/ 下新增 failures.html，确保 page 元数据符合 shell 插件 -->
+<body data-shell="admin" data-page="failures" data-breadcrumb="Home > Failures">
+  <main class="content">
+    <div class="page-head">
+      <h1>失效分析 & 采集</h1>
+      <p class="muted">上报/查看/统计失效数据（CSV 后端存储）</p>
+    </div>
+
+    <section class="card">
+      <div class="card-body">
+        <!-- 表单挂载点 -->
+        <div id="failures-form-root">
+          <!-- 可把下面表单 HTML 直接放进这里或由 src/v4/failures.js 动态渲染 -->
+        </div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <div class="card-body">
+          <h3>按型号名称统计</h3>
+          <div data-chart="failures-by-model" style="height:320px;"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h3>按所属模块统计</h3>
+          <div data-chart="failures-by-module" style="height:320px;"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="/src/main-v4.js"></script>
+</body>
